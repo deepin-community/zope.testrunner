@@ -1,0 +1,2 @@
+debian/test_helper_3 usr/share/python3-zope.testrunner
+debian/test_one_package_in_throwaway_vm.py usr/share/python3-zope.testrunner
