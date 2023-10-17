@@ -1,0 +1,15 @@
+setuptools
+six
+zope.exceptions
+zope.interface
+
+[docs]
+Sphinx
+sphinxcontrib-programoutput
+
+[subunit]
+python-subunit>=0.0.11
+testtools>=0.9.30
+
+[test]
+zope.testing
