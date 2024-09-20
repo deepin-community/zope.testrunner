@@ -1,5 +1,199 @@
-template-repository (1.0-1) unstable; urgency=medium
+zope.testrunner (6.5-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream release.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Colin Watson <cjwatson@debian.org>  Fri, 09 Aug 2024 13:51:40 +0100
+
+zope.testrunner (6.4-2) unstable; urgency=medium
+
+  * Use pybuild-plugin-pyproject.
+  * Switch to autopkgtest-pkg-pybuild.
+
+ -- Colin Watson <cjwatson@debian.org>  Wed, 05 Jun 2024 11:12:00 +0100
+
+zope.testrunner (6.4-1) unstable; urgency=medium
+
+  [ Alexandre Detiste ]
+  * Remove obsolete dependency on python3-six.
+
+  [ Colin Watson ]
+  * New upstream release.
+
+ -- Colin Watson <cjwatson@debian.org>  Sun, 03 Mar 2024 12:11:23 +0000
+
+zope.testrunner (6.3.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 13 Feb 2024 09:44:20 +0000
+
+zope.testrunner (6.2.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 25 Dec 2023 13:35:45 +0000
+
+zope.testrunner (6.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * Work around Python 3.12 no longer calling ``startTest`` for skipped tests,
+    taken from upstream. Closes: #1057654, #1058382.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 20 Dec 2023 17:37:35 +0100
+
+zope.testrunner (6.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 05 Dec 2023 20:21:04 +0100
+
+zope.testrunner (5.6-1) unstable; urgency=medium
+
+  * Switch Maintainer to the Debian Python Team (closes: #948817).
+  * Update Homepage to https://github.com/zopefoundation/zope.testrunner.
+  * Use versioned copyright format URI.
+  * Use secure URI in debian/watch.
+  * Bump debhelper from old 11 to 13.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository-Browse.
+  * Update standards version to 4.6.1, no changes needed.
+  * New upstream release.
+  * Run tests properly, using zope.testrunner itself.
+  * Set Rules-Requires-Root: no.
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 20 Dec 2022 01:06:19 +0000
+
+zope.testrunner (5.2-3) unstable; urgency=medium
+
+  * QA upload
+
+  [ Sebastian Ramacher ]
+  * Make python3-zope.testrunner.bcep compatible with
+    py3compile in buster (Closes: #986903)
+
+ -- Graham Inggs <ginggs@debian.org>  Wed, 14 Apr 2021 12:27:28 +0000
+
+zope.testrunner (5.2-2) unstable; urgency=medium
+
+  * Don't byte-compile the tests.
+  * Add test dependencies.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 23 Nov 2020 09:12:19 +0100
+
+zope.testrunner (5.2-1) unstable; urgency=medium
+
+  * QA upload.
+  * New upstream version, compatible with Python 3.9.
+  * Bump debhelper and standards versions.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 22 Nov 2020 16:38:16 +0100
+
+zope.testrunner (4.4.9-4) unstable; urgency=medium
+
+  * QA upload.
+  * Drop custom autopkgtest and use autopkgtest-pkg-python (Closes:
+    #940315)
+
+ -- Paul Gevers <elbrus@debian.org>  Fri, 20 Sep 2019 21:56:25 +0200
+
+zope.testrunner (4.4.9-3) unstable; urgency=medium
+
+  * QA upload.
+  * Fix error in breaks/replaces relationship, change python3-zope.testrunner to
+    python-zope.testrunner (Closes: 939620)
+
+ -- Peter Michael Green <plugwash@debian.org>  Thu, 12 Sep 2019 18:19:28 +0000
+
+zope.testrunner (4.4.9-2) unstable; urgency=medium
+
+  * QA upload.
+  * Orphan the package. Closes: #869467.
+  * Stop building the Python2 package. Closes: #938919.
+  * Fix lintian warnings.
+  * Provide both zope-testrunner and zope-testrunner3 scripts.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 05 Sep 2019 08:58:51 +0200
+
+zope.testrunner (4.4.9-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * debian/control: Bump Standards-Version with no other changes needed.
+  * debian/watch: Use pypi.debian.net redirector.
+  * debian/tests/{control,all-2,all-3}: Simplify to just import tests, to
+    match the other zope.* Debian packages.
+
+ -- Barry Warsaw <barry@debian.org>  Fri, 17 Jul 2015 15:55:31 -0400
+
+zope.testrunner (4.4.3-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ Matthias Klose ]
+  * Do not depend on a specific python version.
+
+  [ Gediminas Paulauskas ]
+  * debian/tests/control:
+    + Tests require python*-setuptools.
+    + Remove python3-subunit from all-3, subunit support does not work.
+  * debian/*.docs: update for moved files.
+  * debian/control:
+    + Remove python3-zope.fixers from Build-Depends, no longer needed.
+    + Remove setuptools from Depends
+  * debian/rules:
+    + Add workaround for dh_python3 not removing setuptools from requires.txt
+    + Install upstream changelog
+    + Do not remove .egg-info on clean
+  * debian/source/options: add to ignore changes in .egg-info directory
+
+  [ Barry Warsaw ]
+  * New upstream release.
+  * Rebuild eliminates dependency on python3.3.  Closes: #751647
+  * debian/control: Bump Standards-Version to 3.9.5 with no other
+    changes necessary.
+
+ -- Barry Warsaw <barry@debian.org>  Tue, 17 Jun 2014 15:04:26 -0400
+
+zope.testrunner (4.0.3-4) unstable; urgency=low
+
+  * Team upload.
+  * debian/control:
+    + zope.exceptions >= 4.0.1 is required for python3.3 otherwise
+      it cannot be imported.
+    + Use canonical URI for Vcs-Svn.
+    + Bump Standards-Version to 3.9.4. No changes needed.
+    + Enable autopkgtest. Closes: #692702.
+
+ -- Arnaud Fontaine <arnau@debian.org>  Tue, 11 Jun 2013 15:40:01 +0900
+
+zope.testrunner (4.0.3-3) unstable; urgency=low
+
+  * Team upload.
+  * debian/rules:
+    + Trap shell command errors if any as per Policy 4.6. Closes: #645184.
+    + Clean up build directory for python3 and egg-info directory.
+      Closes: #645186.
+
+ -- Arnaud Fontaine <arnau@debian.org>  Fri, 14 Oct 2011 10:52:05 +0900
+
+zope.testrunner (4.0.3-2) unstable; urgency=low
+
+  * Team upload.
+
+  [ Arnaud Fontaine ]
+  * debian/control:
+    + Add zope.fixers to Build-Depends (needed for Python 3 only).
+      Closes: #628246.
+
+  [ Brian Sutherland ]
+  * Correct path to test script in test_helper_3.
+  * Add debian/tests.
+
+ -- Arnaud Fontaine <arnau@debian.org>  Mon, 30 May 2011 15:56:08 +0900
+
+zope.testrunner (4.0.3-1) unstable; urgency=low
+
+  * Initial packaging.
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Thu, 28 Apr 2011 12:08:42 +0200
