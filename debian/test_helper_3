@@ -1,0 +1,20 @@
+# includable shell script to make test scripts smaller
+
+set -e
+
+if [ -z "${testfilter}" ]; then
+   if [ -x /usr/bin/van-pydeb ]; then
+       testfilter="-s $(van-pydeb src_to_py $(grep 'Source: ' debian/control | sed 's/Source: //'))"
+   else
+       echo "Could not find van-pydeb to guess the python package name. You should have your tests depend on it or you "
+       echo "must specify testfilter variable, something like -p package_name, see zope-testrunner --help for details."
+       exit 1
+   fi
+fi 
+
+PY3VERS=$(py3versions -r debian/control)
+for python in ${PY3VERS}; do
+    py_libdir_sh=$(${python} -c 'from distutils import sysconfig; print(sysconfig.get_python_lib())')
+    echo Running tests for ${python}: /usr/bin/zope-testrunner3 -k --test-path ${py_libdir_sh} ${testfilter}
+    ${python} /usr/bin/zope-testrunner3 -k --test-path ${py_libdir_sh} ${testfilter}
+done
