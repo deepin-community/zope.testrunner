@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: zope.testrunner
-Version: 6.5
+Version: 6.6
 Summary: Zope testrunner script.
 Home-page: https://github.com/zopefoundation/zope.testrunner
 Author: Zope Foundation and Contributors
@@ -14,7 +14,6 @@ Classifier: License :: OSI Approved :: Zope Public License
 Classifier: Operating System :: OS Independent
 Classifier: Programming Language :: Python
 Classifier: Programming Language :: Python :: 3
-Classifier: Programming Language :: Python :: 3.7
 Classifier: Programming Language :: Python :: 3.8
 Classifier: Programming Language :: Python :: 3.9
 Classifier: Programming Language :: Python :: 3.10
@@ -25,7 +24,7 @@ Classifier: Programming Language :: Python :: Implementation :: CPython
 Classifier: Programming Language :: Python :: Implementation :: PyPy
 Classifier: Topic :: Software Development :: Libraries :: Python Modules
 Classifier: Topic :: Software Development :: Testing
-Requires-Python: >=3.7
+Requires-Python: >=3.8
 License-File: LICENSE.md
 Requires-Dist: setuptools
 Requires-Dist: zope.exceptions
@@ -220,8 +219,19 @@ test execution order, and run multiple tests in parallel.
  zope.testrunner Changelog
 ===========================
 
+6.6 (2024-10-16)
+================
+
+- Make tests compatible with Python 3.13 + add support for that version.
+  (`#181 <https://github.com/zopefoundation/zope.testrunner/pull/181>`_)
+
+- Drop support for Python 3.7.
+
+
 6.5 (2024-08-06)
 ================
+
+- Remove setuptools fossils.
 
 - ``unittest.TestCase.subTest`` support
   (`#91 <https://github.com/zopefoundation/zope.testrunner/issues/91>`_).

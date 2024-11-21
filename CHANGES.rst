@@ -2,8 +2,19 @@
  zope.testrunner Changelog
 ===========================
 
+6.6 (2024-10-16)
+================
+
+- Make tests compatible with Python 3.13 + add support for that version.
+  (`#181 <https://github.com/zopefoundation/zope.testrunner/pull/181>`_)
+
+- Drop support for Python 3.7.
+
+
 6.5 (2024-08-06)
 ================
+
+- Remove setuptools fossils.
 
 - ``unittest.TestCase.subTest`` support
   (`#91 <https://github.com/zopefoundation/zope.testrunner/issues/91>`_).

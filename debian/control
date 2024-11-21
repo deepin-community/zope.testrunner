@@ -11,7 +11,7 @@ Build-Depends: debhelper-compat (= 13),
                python3-zope.exceptions,
                python3-zope.interface,
                python3-zope.testing <!nocheck>,
-Standards-Version: 4.6.1
+Standards-Version: 4.7.0
 Testsuite: autopkgtest-pkg-pybuild
 Homepage: https://github.com/zopefoundation/zope.testrunner
 Vcs-Browser: https://salsa.debian.org/python-team/packages/zope.testrunner
