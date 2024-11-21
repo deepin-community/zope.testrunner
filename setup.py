@@ -21,7 +21,7 @@ import os
 from setuptools import setup
 
 
-version = '6.5'
+version = '6.6'
 
 INSTALL_REQUIRES = [
     'setuptools',
@@ -44,33 +44,6 @@ EXTRAS_REQUIRE = {
         'sphinxcontrib-programoutput',
     ],
 }
-
-
-CUSTOM_TEST_TEMPLATE = """\
-import sys
-sys.path = %r
-
-try:
-    import coverage
-except ImportError:
-    pass
-else:
-    coverage.process_startup()
-
-import os
-os.chdir(%r)
-
-# The following unused imports are dark magic that makes the tests pass on
-# Python 3.5 on Travis CI.  I do not understand why.
-import zope.exceptions.exceptionformatter
-import zope.testing
-
-import zope.testrunner
-if __name__ == '__main__':
-    zope.testrunner.run([
-        '--test-path', %r, '-c',
-        ])
-"""
 
 
 def read(*names):
@@ -109,7 +82,6 @@ setup(
         "Operating System :: OS Independent",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
@@ -122,9 +94,8 @@ setup(
         "Topic :: Software Development :: Testing",
     ],
     namespace_packages=['zope'],
-    python_requires='>=3.7',
+    python_requires='>=3.8',
     install_requires=INSTALL_REQUIRES,
-    tests_require=TESTS_REQUIRE,
     extras_require=EXTRAS_REQUIRE,
     entry_points={
         'console_scripts':
